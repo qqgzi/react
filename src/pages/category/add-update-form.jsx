@@ -33,8 +33,8 @@ class AddUpdateForm extends Component {
                   {required:true,message:'分类名称必须输入'}
                 ]
               }
-            )
-              (< Input type='text' placeholder='please input categoryName'></Input>)
+            )(< Input type='text' placeholder='please input categoryName'></Input>)
+              
           }
           
         </Item>

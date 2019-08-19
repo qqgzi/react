@@ -3,9 +3,7 @@
 import jsonp from 'jsonp'//axiios不能发jsonp
 import ajax from './ajax'
 import { message } from 'antd';
-import { resolve } from 'url';
-
-//请求登录的函数
+//
 const BASE = ''
 //在后面多行语句的时候
 export const reqLogin =(username,password)=>ajax.post(BASE+'/login',{username,password})
@@ -132,3 +130,25 @@ export const reqUpdateStatus =
         BASE + '/manage/product/'+(product._id?'update':'add'),
         product
     )
+
+//前台的roles
+
+
+export const reqRoles = () => ajax(BASE + '/manage/role/list')
+//role阶段
+export const reqAddRole = (roleName) => ajax.post(BASE+'/manage/role/add',{roleName})
+
+
+//更新当前的权限设置
+export const reqUpdateRole = (role) => ajax.post(BASE + '/manage/role/update', role)
+
+
+//// 获取所有用户的列表
+export const reqUsers = () => ajax(BASE + '/manage/user/list')
+//根据ID删除指定的用户
+// 删除指定用户
+export const reqDeleteUser = (userId) => ajax.post(BASE + '/manage/user/delete', {
+    userId
+})
+//根据当前是否有user._id判断 是添加还是更新
+export const reqAddOrUpdateUser = (user) => ajax.post(BASE + '/manage/user/' + (user._id ? 'update' : 'add'),user)

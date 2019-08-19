@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Modal} from 'antd';//引入confirm
 import LinkButton from '../../components/link-button';
 import {withRouter} from 'react-router-dom'
-import {reqWeather,reqLogin} from '../../api'
+import {reqWeather} from '../../api'
 import {formateDate} from '../../utils/dateUtils.js'
 import  menuList from '../../config/menuConfig'
 import memoryUtils from '../../utils/memoryUtils.js'

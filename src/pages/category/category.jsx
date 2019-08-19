@@ -65,7 +65,7 @@ export default class Category extends Component {
                 const {categoryName} = values
                 const {showState} = this.state;
                 let result//在外层进行声明，且用let进行
-                if(showState==1){//add
+                if(showState===1){//add
                      result = await reqAddCategorys(categoryName)
                 }else{//修改数据,const 有块级作用域问题
                     const categoryId = this.category._id
